@@ -59,4 +59,4 @@ function QuestionItem({ question, onDeleteQuestion, onUpdateCorrectAnswer }) {
   );
 }
 
-export default QuestionItem;
+export default QuestionItem

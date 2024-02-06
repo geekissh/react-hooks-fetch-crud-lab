@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import QuestionItem from "./QuestionItem";
 
-function QuestionList({ questions, onDeleteQuestion, onUpdateCorrectAnswer }) {
+function QuestionList({ onDeleteQuestion, onUpdateCorrectAnswer }) {
+  const [questions, setQuestions] = useState([]);
+
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
@@ -14,7 +16,7 @@ function QuestionList({ questions, onDeleteQuestion, onUpdateCorrectAnswer }) {
     };
 
     fetchQuestions();
-  }, []);
+  }, [setQuestions]); 
 
   return (
     <section>
